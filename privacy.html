@@ -5,6 +5,210 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yogaí: Privacy</title>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>/**
+ * Yogaí Design Tokens
+ * ====================
+ * Calming, grounded palette. Earthy warmth + serene cool tones.
+ */
+
+:root {
+  --white: #ffffff;
+  --black: #0a0a0a;
+
+  --gray-50: #fafaf9;
+  --gray-100: #f5f5f4;
+  --gray-200: #e7e5e4;
+  --gray-300: #d6d3d1;
+  --gray-400: #a8a29e;
+  --gray-500: #78716c;
+  --gray-600: #57534e;
+  --gray-700: #44403c;
+  --gray-800: #292524;
+  --gray-900: #1c1917;
+  --gray-950: #0c0a09;
+
+  /* Sage green — primary, grounding */
+  --brand-50: #f1f8f4;
+  --brand-100: #ddf0e4;
+  --brand-200: #bde1cb;
+  --brand-300: #90cbaa;
+  --brand-400: #60b083;
+  --brand-500: #3d9468;
+  --brand-600: #2d7853;
+  --brand-700: #265f44;
+  --brand-800: #224c38;
+  --brand-900: #1d3f2f;
+
+  /* Warm terracotta — accent */
+  --accent-50: #fdf4f0;
+  --accent-100: #fbe6dc;
+  --accent-200: #f7ccb8;
+  --accent-300: #f0a888;
+  --accent-400: #e88360;
+  --accent-500: #dc6840;
+  --accent-600: #c5502d;
+  --accent-700: #a43f26;
+  --accent-800: #863525;
+  --accent-900: #6e2f24;
+
+  /* Yoga style colors */
+  --style-hatha: #3d9468;
+  --style-vinyasa: #3b82f6;
+  --style-yin: #8b5cf6;
+  --style-restorative: #ec4899;
+  --style-power: #ef4444;
+  --style-kundalini: #f59e0b;
+  --style-iyengar: #06b6d4;
+  --style-ashtanga: #f97316;
+
+  --error-50: #fef2f2;
+  --error-500: #ef4444;
+  --error-700: #b91c1c;
+  --success-50: #f0fdf4;
+  --success-500: #22c55e;
+  --success-700: #15803d;
+
+  /* Typography */
+  --font-sans: Inter, system-ui, -apple-system, sans-serif;
+  --font-display: Inter, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+
+  --text-xs: clamp(0.75rem, 0.7rem + 0.15vw, 0.8125rem);
+  --text-sm: clamp(0.8125rem, 0.77rem + 0.2vw, 0.875rem);
+  --text-base: clamp(0.9375rem, 0.875rem + 0.25vw, 1.0625rem);
+  --text-lg: clamp(1.0625rem, 0.975rem + 0.35vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.25rem + 0.75vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.5rem + 1.2vw, 2.5rem);
+  --text-4xl: clamp(2.25rem, 1.75rem + 1.5vw, 3.25rem);
+  --text-5xl: clamp(2.75rem, 2rem + 2vw, 4rem);
+
+  --leading-tight: 1.2;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  --section-pad: clamp(64px, 8vw, 120px);
+  --container-max: 960px;
+  --container-narrow: 680px;
+
+  /* Borders & Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+
+  /* Transitions */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --transition: var(--duration-normal) var(--ease-default);
+
+  /* Z-index */
+  --z-base: 0;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+}
+
+/* Semantic tokens (light) */
+:root {
+  --color-bg: var(--gray-50);
+  --color-bg-secondary: var(--white);
+  --color-bg-tertiary: var(--gray-100);
+  --color-bg-elevated: var(--white);
+
+  --color-text: var(--gray-900);
+  --color-text-secondary: var(--gray-600);
+  --color-text-muted: var(--gray-400);
+  --color-text-inverse: var(--white);
+
+  --color-brand: var(--brand-600);
+  --color-brand-hover: var(--brand-700);
+  --color-brand-light: var(--brand-50);
+  --color-brand-text: var(--brand-700);
+
+  --color-accent: var(--accent-500);
+  --color-accent-hover: var(--accent-600);
+  --color-accent-light: var(--accent-50);
+
+  --color-border: var(--gray-200);
+  --color-border-hover: var(--gray-300);
+  --color-border-focus: var(--brand-500);
+
+  --color-link: var(--brand-600);
+  --color-link-hover: var(--brand-800);
+  --color-focus-ring: var(--brand-500);
+
+  --color-error: var(--error-500);
+  --color-error-bg: var(--error-50);
+  --color-error-text: var(--error-700);
+  --color-success: var(--success-500);
+  --color-success-bg: var(--success-50);
+  --color-success-text: var(--success-700);
+
+  --shadow-card: var(--shadow-md);
+  --shadow-nav: var(--shadow-sm);
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+  --color-bg: var(--gray-950);
+  --color-bg-secondary: var(--gray-900);
+  --color-bg-tertiary: var(--gray-800);
+  --color-bg-elevated: var(--gray-800);
+
+  --color-text: var(--gray-100);
+  --color-text-secondary: var(--gray-400);
+  --color-text-muted: var(--gray-500);
+
+  --color-brand: var(--brand-400);
+  --color-brand-hover: var(--brand-300);
+  --color-brand-light: var(--brand-900);
+  --color-brand-text: var(--brand-300);
+
+  --color-accent: var(--accent-400);
+  --color-accent-hover: var(--accent-300);
+  --color-accent-light: var(--accent-900);
+
+  --color-border: var(--gray-700);
+  --color-border-hover: var(--gray-600);
+  --color-border-focus: var(--brand-400);
+
+  --color-link: var(--brand-400);
+  --color-link-hover: var(--brand-200);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+}
+</style>
 <style>
     :root {
       --forest-50: #e8f0eb; --forest-100: #c4dece; --forest-200: #8dbb9e;
@@ -448,6 +652,9 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: 408px;
+  /* Scale the viewBox with the width. With the height="100" attribute in
+     charge the drawing stayed 272px wide inside a 408px box. */
+  height: auto;
   pointer-events: none;
   z-index: 1;
 }
@@ -820,7 +1027,10 @@
       // reintroduce a jump at the far end of the sweep.
       var segW = 68, offset = -phase;
       var d = 'M' + offset.toFixed(1) + ',' + cy.toFixed(1);
-      for (var i = 0; i < 6; i++) {
+      // Exactly the viewBox width, two periods. It used to draw six segments
+      // (408 units) into a 272-wide viewBox, which ran off the right edge and
+      // put the visible wave's centre right of the rings' centre.
+      for (var i = 0; i * segW < W; i++) {
         var isUp = i % 2 === 0;
         var cpX = offset + i * segW + segW / 2;
         var cpY = isUp ? cy - amp : cy + amp;
@@ -1010,8 +1220,7 @@
 
 <footer class="ftr">
   Yogaí. (Re)generative Yoga &nbsp;·&nbsp; part of the Regen Studio family<br>
-  <a href="privacy.html">Privacy</a> &nbsp;·&nbsp;
-  <a href="exercise-registry.html">Pose guide</a>
+  <a href="privacy.html">Privacy</a>
 </footer>
 </body>
 </html>
